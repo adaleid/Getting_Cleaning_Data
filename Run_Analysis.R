@@ -48,7 +48,7 @@ baseData <- melt(dataSet,(id.vars=c("subject","activity")))
 
 secondDataSet <- dcast(baseData, subject + activity ~ variable, mean)
 
-names(secondDataSet)[-c(1:2)] <- paste("[mean of]" , names(secondDataSet)[-c(1:2)] )
+names(secondDataSet)[-c(1:2)] <- paste("mean of" , names(secondDataSet)[-c(1:2)] )
 
 write.table(secondDataSet, "tidy_data.txt", sep = ",")
 write.table(secondDataSet, "tidy_data.csv", sep = ",")
